@@ -1,0 +1,17 @@
+{% extends 'users/layout.html' %}
+
+{% block title %}
+
+{{title}}
+
+{% endblock  %}
+
+{% block content %}
+
+<h1>Apply page for {{team.team_name}}</h1>
+{% for task in tasks %}
+<h2> {{task}} : {{task.task_desc}}</h2>
+{% endfor %}
+
+{% endblock content %}
+

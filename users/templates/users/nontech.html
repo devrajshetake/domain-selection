@@ -1,0 +1,245 @@
+{% extends "users/layout.html" %}
+{% block content %} 
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/domain2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    .row1 div,.row2 div,.row3 div{
+        font-family: 'Montserrat', sans-serif;
+        
+    }
+</style>
+
+    <div class="nav1">
+        <nav>
+            <a href="{% url 'domains' %}" class="BUTTON_PWM">Technical Domains</a>
+            <a href="#" class="BUTTON_PWM">Non-technical Domains</a>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row1">
+        <div class="a">Business Administration
+            <div class="icon">
+                <img src="https://img.icons8.com/material/48/000000/salary-male.png" alt="">
+            </div>
+            <div>
+                <a href="#" class="BUTTON_NMQ error">APPLY</a>
+            </div>
+        </div>
+        <div class="a">Finance
+            <div class="icon">
+                <img src="https://img.icons8.com/material/48/000000/rupee--v1.png" alt="">
+            </div>
+            <div>
+                <a href="#" class="BUTTON_NMQ">APPLY</a>
+            </div>
+        </div>
+        <div class="a">Design
+            <div class="icon">
+                <img src="https://img.icons8.com/material/48/000000/design--v1.png" alt="">
+            </div>
+            <div>
+                <a href="#" class="BUTTON_NMQ">APPLY</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="row2">
+        <div class="a">Content
+            <div class="icon">
+                <img src="https://img.icons8.com/material/48/000000/overview-pages-4--v1.png" alt="">
+            </div>
+            <div>
+                <a href="#" class="BUTTON_NMQ">APPLY</a>
+            </div>
+        </div>
+        <div class="a">Marketing
+            <div class="icon">
+                <img src="https://img.icons8.com/material/48/000000/reseller--v1.png" alt="">
+            </div>
+            <div>
+                <a href="#" class="BUTTON_NMQ">APPLY</a>
+            </div>
+        </div>
+        <div class="a">Event Management
+            <div class="icon">
+                <img src="https://img.icons8.com/material/48/000000/event-accepted.png" alt="">
+            </div>
+            <div>
+                <a href="#" class="BUTTON_NMQ">APPLY</a>
+            </div>
+        </div>
+    </div>
+    <div class="row3">
+    <div class="a">Social Work
+        <div class="icon">
+            <img src="https://img.icons8.com/material/48/000000/hand-holding-heart--v2.png" alt="">
+        </div>
+        <div>
+            <a href="#" class="BUTTON_NMQ">APPLY</a>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <style>
+        *{
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav1{
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+.BUTTON_PWM {
+    -webkit-border-radius: 48px;
+    -moz-border-radius: 48px;
+    border-radius: 48px;
+    color: #E4ECF2;
+    font-family: Trebuchet MS;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 20px;
+    margin: 40px;
+    width: 300px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    background-color: #5C8CBB;
+    -webkit-box-shadow: 1px 1px 20px 0 #000000;
+    -moz-box-shadow: 1px 1px 20px 0 #000000;
+    box-shadow: 1px 1px 20px 0 #000000;
+    text-shadow: 1px 1px 20px #000000;
+    border: solid #000000 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .BUTTON_PWM:hover {
+    border: solid #000000 1px;
+    background: #23395C;
+    background-image: -webkit-linear-gradient(top, #23395C, #5079BB);
+    background-image: -moz-linear-gradient(top, #23395C, #5079BB);
+    background-image: -ms-linear-gradient(top, #23395C, #5079BB);
+    background-image: -o-linear-gradient(top, #23395C, #5079BB);
+    background-image: -webkit-gradient(to bottom, #23395C, #5079BB);
+    -webkit-border-radius: 88px;
+    -moz-border-radius: 88px;
+    border-radius: 88px;
+    text-decoration: none;
+ }
+ a{
+    text-decoration: 0;
+    padding: 20px;
+    color: #66bfbf;
+}
+
+.navigation{
+    background-color: #313535;
+    overflow: hidden;
+    
+}
+.nav{
+    float: right;
+    padding: 20px;
+    text-align: center;
+}
+#csi_logo{
+    width: 100px;
+    height: 60px;
+    padding: 10px;
+}
+.container{
+    flex-wrap: wrap;
+    margin: 40px;
+    align-items: center;
+    
+}
+.row1,.row2,.row3{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+.a{
+    width: 300px;
+    height: 400px;
+    align-content: stretch;
+    overflow: hidden;
+    margin: 20px;
+    border: solid 5px #5079BB;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 10px;
+    border-radius: 30px;
+    padding-top: 20px;
+    font-weight: bolder;
+
+}
+.icon img{
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+}
+.BUTTON_NMQ {
+    -webkit-border-radius: 48px;
+    -moz-border-radius: 48px;
+    border-radius: 48px;
+    color: #E4ECF2;
+    font-family: Trebuchet MS;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 20px;
+     margin: 40px;
+    width: 200px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    background-color: #5C8CBB;
+    -webkit-box-shadow: 1px 1px 20px 0 #000000;
+    -moz-box-shadow: 1px 1px 20px 0 #000000;
+    box-shadow: 1px 1px 20px 0 #000000;
+    text-shadow: 1px 1px 20px #000000;
+    border: solid #000000 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .BUTTON_NMQ:hover {
+    border: solid #000000 1px;
+    background: #23395C;
+    background-image: -webkit-linear-gradient(top, #23395C, #5079BB);
+    background-image: -moz-linear-gradient(top, #23395C, #5079BB);
+    background-image: -ms-linear-gradient(top, #23395C, #5079BB);
+    background-image: -o-linear-gradient(top, #23395C, #5079BB);
+    background-image: -webkit-gradient(to bottom, #23395C, #5079BB);
+    -webkit-border-radius: 88px;
+    -moz-border-radius: 88px;
+    border-radius: 88px;
+    text-decoration: none;
+ }
+ .error{
+     margin-top: 12px;
+ }
+
+    </style>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<nav class="navigation">
+    <img src="https://www.pictcsi.com/assets/CSI%20Logo%20Nav.png" alt="#" id="csi_logo">
+    <div class="nav">
+    <a href="{% url 'home' %}">HOME</a>
+    <a href="https://www.pictcsi.com/" target="_blank">OFFICIAL WEBSITE </a>
+    <a href="{% url 'domains' %}">DOMAINS</a>
+    {% if not request.user.is_authenticated %}
+    <a href="{% url 'login' %}">LOGIN</a>
+    {% else %}
+    <a href="{% url 'profile' %}">PROFILE</a>
+    {% endif %}
+    
+    </div>
+</nav>
+
+<style>
+    *{
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: 0;
+    padding: 20px;
+    color: #66bfbf;
+}
+
+.navigation{
+    background-color: #313535;
+    overflow: hidden;
+    
+}
+.nav{
+    float: right;
+    padding: 20px;
+    text-align: center;
+}
+#csi_logo{
+    width: 100px;
+    height: 60px;
+    padding: 10px;
+}
+</style>
