@@ -31,7 +31,7 @@ def logout(request):
 
 def domains(request):
     context = {'title': "Domains"}
-    return render(request, "users/domains.html", context)
+    return render(request, "users/domains1.html", context)
 
 def domains2(request):
     context = {'title': "Domains"}
