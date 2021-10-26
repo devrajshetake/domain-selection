@@ -1,6 +1,7 @@
 {% extends 'users/layout.html' %}
 {% block content %}
-<div class="nav1">
+
+<!-- <div class="nav1">
     <nav>
         <a href="#" class="BUTTON_PWM">Technical Domains</a>
         <a href="{% url 'domains2' %}" class="BUTTON_PWM">Non-technical Domains</a>
@@ -152,7 +153,281 @@
         margin: auto;
         display: block;
     }
+</style> -->
+<style>
+    /*----  Main Style  ----*/
+#cards_landscape_wrap-2{
+  text-align: center;
+  background: #F7F7F7;
+}
+#cards_landscape_wrap-2 .container{
+  padding-top: 80px; 
+  padding-bottom: 100px;
+}
+#cards_landscape_wrap-2 a{
+  text-decoration: none;
+  outline: none;
+}
+#cards_landscape_wrap-2 .card-flyer {
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box{
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+  -webkit-transition:all .9s ease; 
+  -moz-transition:all .9s ease; 
+  -o-transition:all .9s ease;
+  -ms-transition:all .9s ease; 
+  width: 100%;
+  height: 200px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+  opacity: 0.7;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+  transform:scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box{
+  text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+  padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer{
+  background: #FFFFFF;
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_landscape_wrap-2 .card-flyer:hover{
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+  margin-top: 0px;
+  margin-bottom: 4px; 
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Roboto Black', sans-serif;
+  letter-spacing: 1px;
+  color: #00acc1;
+}
+.card-center {
+    display: block;
+    margin: auto;
+}
+.nav1 {
+        text-align: center;
+        position: relative;
+        top: 50px;
+    }
+
+.BUTTON_PWM {
+        -webkit-border-radius: 48px;
+        -moz-border-radius: 48px;
+        border-radius: 48px;
+        color: #E4ECF2;
+        font-family: Trebuchet MS;
+        font-size: 25px;
+        font-weight: 100;
+        padding: 20px;
+        margin: 30px;
+        width: 300px;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+        background-color: #5C8CBB;
+        -webkit-box-shadow: 1px 1px 20px 0 #000000;
+        -moz-box-shadow: 1px 1px 20px 0 #000000;
+        box-shadow: 1px 1px 20px 0 #000000;
+        text-shadow: 1px 1px 20px #000000;
+        border: solid #000000 1px;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+}
+
+.BUTTON_PWM:hover {
+        border: solid #000000 1px;
+        background: #23395C;
+        background-image: -webkit-linear-gradient(top, #23395C, #5079BB);
+        background-image: -moz-linear-gradient(top, #23395C, #5079BB);
+        background-image: -ms-linear-gradient(top, #23395C, #5079BB);
+        background-image: -o-linear-gradient(top, #23395C, #5079BB);
+        background-image: -webkit-gradient(to bottom, #23395C, #5079BB);
+        -webkit-border-radius: 88px;
+        -moz-border-radius: 88px;
+        border-radius: 88px;
+        text-decoration: none;
+}
+.button1 {
+    width: 75%;
+    margin-bottom: 1.2rem;
+    background-color: #11999E ;
+    border: none;
+    border-radius: 10px;
+}
+.button1:hover {
+    background-color: #145c5c;
+}
+.main-nav {
+    /* background-image: linear-gradient(to right, rgba(74, 117, 124, 0), rgb(11, 202, 202)); */
+}
 </style>
+    <div class="main-nav">
+        <div class="nav1">
+            <nav>
+                <a href="#" class="BUTTON_PWM">Technical Domains</a>
+                <a href="{% url 'domains2' %}" class="BUTTON_PWM">Non-technical Domains</a>
+            </nav>
+        </div>
+       <!-- Topic Cards -->
+       <div id="cards_landscape_wrap-2">
+        <div class="container main-nav">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOb83DSUtOf1X8wumuJjd2pKGAt2UEiLUg8I5x7OqP-MGUhaucvIv9yDx47W5XRVARjA&usqp=CAU" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Web Development</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary button1">APPLY</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://www.valuecoders.com/blog/wp-content/uploads/2018/06/11-tips-successful-mobile-app-development-businesses-android-ios-4-1.jpg" alt="" />
+                                </div>
+                                <div class="text-container">                                    
+                                    <h6>App Development</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary button1">APPLY</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1129869424%2F960x0.jpg%3Ffit%3Dscale" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Machine Learning</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary button1">APPLY</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://www.ftxinfotech.com/wp-content/uploads/2020/11/blockchain-mobility.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Block Chain</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary button1">APPLY</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://csharpcorner-mindcrackerinc.netdna-ssl.com/article/what-is-competitive-programming-and-why-it-is-importantcontests/Images/Top-10-Programming-Languages-to-Watch-Out-in-2019.png" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Competitive programming</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary button1">APPLY</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://isg-one.com/images/default-source/default-album/cyber-security.jpg?sfvrsn=6886d831_2" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Cyber-Security</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary button1">APPLY</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 card-center">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://www.merchantfraudjournal.com/wp-content/uploads/2021/08/Cloud-Computing.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Dev Ops and Cloud Computing</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary button1">APPLY</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 {% endblock %}
