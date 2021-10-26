@@ -27,6 +27,7 @@
         <nav>
             <a href="{% url 'domains' %}" class="BUTTON_PWM">Technical Domains</a>
             <a href="#" class="BUTTON_PWM">Non-technical Domains</a>
+            
         </nav>
     </div>
     <div class="container">
@@ -36,7 +37,7 @@
                 <img src="https://img.icons8.com/material/48/000000/salary-male.png" alt="">
             </div>
             <div>
-                <a href="#" class="BUTTON_NMQ error">APPLY</a>
+                <a href="" class="btn btn-default btn-rounded mb-4 BUTTON_NMQ error" data-toggle="modal" data-target="#modalContactForm">APPLY</a>
             </div>
         </div>
         <div class="a">Finance
@@ -240,5 +241,7 @@
  }
 
     </style>
+
+    {% include 'users/apply_form.html' %}
 
 {% endblock %}
