@@ -39,7 +39,7 @@ class Application(models.Model):
         First = 1
         Second = 2
         Third = 3
-    preference = models.IntegerField(choices=Preference.choices)
+    preference = models.IntegerField(choices=Preference.choices, null=True)
     expect = models.TextField(null=True)
 
     def __str__(self):

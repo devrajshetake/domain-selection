@@ -3,10 +3,9 @@
 
 
 <style>
-    /*----  Main Style  ----*/
-#cards_landscape_wrap-2{
+  #cards_landscape_wrap-2{
   text-align: center;
-  background: #F7F7F7;
+  /* background: #F7F7F7; */
 }
 #cards_landscape_wrap-2 .container{
   padding-top: 80px; 
@@ -20,7 +19,7 @@
   border-radius: 5px;
 }
 #cards_landscape_wrap-2 .card-flyer .image-box{
-  background: #ffffff;
+  /* background: #ffffff; */
   overflow: hidden;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
   border-radius: 5px;
@@ -58,7 +57,7 @@
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
 }
 #cards_landscape_wrap-2 .card-flyer:hover{
-  background: #fff;
+  /* background: #fff; */
   box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
@@ -144,7 +143,14 @@
 .button1:hover {
     background-color: #145c5c;
 }
-
+body {
+    background-image: linear-gradient(to right,rgb(60, 130, 151),rgb(18, 30, 90));
+}
+.btn-applied{
+  background-color: rgb(154, 231, 154) !important;
+  cursor: default !important;
+  
+}
 </style>
     <div class="main-nav">
         <div class="nav1">
@@ -169,12 +175,13 @@
                                     <h6>{{team.team_name}}</h6>
                                     <p>{{team.desc}}</p>
                                 </div>
-                                <a href="#" class="btn btn-primary button1" data-toggle="modal" data-target="#modalContactForm-{{team.code}}">APPLY</a>
+                                <a  class="btn btn-primary button1 "  data-toggle="modal" data-target="#modalContactForm-{{team.code}}" id="btn-{{team.code}}">APPLY</a>
                             </div>
                         </div>
                     <!-- </a> -->
                 </div>
                 {% include 'users/apply_form.html' %}
+
                 
                 {% endfor %}
             </div>
@@ -182,7 +189,21 @@
     </div>
 </div>
 
-    
+{% for team in appliedTeams %}
+<script>
+  function AppliedStatus(btn_id) {
+    var element = document.getElementById(btn_id);
+    element.classList.remove("btn-primary");
+    element.classList.add("btn-applied");
+    element.disabled = true;
+    element.innerText = "Applied";
+  }
+btn_id = "btn-{{team.code}}";
+AppliedStatus(btn_id);
+
+</script>
+{% endfor %}
+
 
 
 {% endblock %}

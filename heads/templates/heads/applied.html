@@ -1,0 +1,32 @@
+{% extends 'heads/layout.html' %}
+
+{% block content %}
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">1st Preference</th>
+        <th scope="col">2nd Preference</th>
+        <th scope="col">3rd Preference</th>
+        <th scope="col">Add to team.</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for application in applications %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{application.user.first_name}} {{application.user.last_name}}</td>
+        <td>{{application.user.email}}</td>
+        
+        <td>@mdo</td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+
+{% endblock content %}

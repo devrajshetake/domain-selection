@@ -34,13 +34,16 @@ def logout(request):
 def domains(request):
     applications = Application.objects.filter(user = request.user)
     radios = []
+    appliedTeams =[]
     for application in applications:
         radios.append(application.preference)
-    dataJSON = dumps({'lst' : radios})
-
-    print(radios)
+        appliedTeams.append(application.team)
+    more_than_3 = False
+    if len(applications) >= 3:
+            more_than_3 = True
+    dataJSON = dumps({'lst' : radios, 'more_than_3': more_than_3})
     teams = Team.objects.all()
-    context = {'title': "Domains", 'teams':teams, 'data':dataJSON, "helloji":"testing kar rahe"}
+    context = {'title': "Domains", 'teams':teams, 'data':dataJSON, "appliedTeams":appliedTeams}
     return render(request, "users/domains.html", context)
 
 def domains2(request):
@@ -82,7 +85,7 @@ def apply(request):
         print(team)
         whyTeam = request.POST['whyTeam']
         prevExp = request.POST['prevExp']
-        pref = int(request.POST['preference'])
+        pref = int(request.POST['preference']) or "0"
         expt = request.POST['expectation']
         next = request.POST['next']
 

@@ -1,8 +1,5 @@
 # Byte-compiled / optimized / DLL files
-<<<<<<< HEAD
 __pycache__/
 
 cmd.txt
-=======
-__pycache__/
->>>>>>> 1ccdf39df62e147b0cd00e7e53d9646e4125e64b
+

@@ -1,0 +1,135 @@
+{% extends "users/layout.html" %} {% load static %} {% block content %}
+<style>
+  body {
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+#content {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 5em;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+h3 {
+  text-shadow: 0px 4px 3px rgba(0,0,0,.4),
+               0px 8px 13px rgba(0,0,0,.1),
+               0px 18px 23px rgba(0,0,0,.1);
+}
+
+hr {
+  width: 35%;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0,0,0,.3);
+}
+
+.slideshow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 35s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+  background-image: url(https://www.francescoficarola.com/wp-content/uploads/2020/09/threat_intelligence.jpg);
+}
+
+.slideshow li:nth-child(2) {
+  background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20201022/pngtree-technical-abstract-technology-background-with-geometric-shape-image_430549.jpg);
+  animation-delay: 7s;
+}
+
+.slideshow li:nth-child(3) {
+  background-image: url(https://previews.123rf.com/images/foxaon/foxaon1203/foxaon120300315/12927549-abstract-dark-blue-technical-background.jpg);
+  animation-delay: 14s;
+}
+
+.slideshow li:nth-child(4) {
+  background-image: url(https://image.shutterstock.com/image-illustration/abstract-business-science-technology-background-260nw-641019886.jpg);
+  animation-delay: 21s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support */
+.no-cssanimations .slideshow li { opacity: 1; }
+a.letsgo {
+  text-decoration: none;
+}
+  
+</style>
+<section>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div id="content">
+				<h1>PCSB</h1>
+				<h3>The Dream Club For Success</h3>
+				<hr>
+				<button type="button" class="btn btn-light btn-5"><a href="#" class="letsgo">Let’s Go </a></button>
+			</div>
+			<ul class="slideshow">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</section>
+
+{% endblock %}
