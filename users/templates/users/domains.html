@@ -1,221 +1,188 @@
-{% extends "users/layout.html" %}
-{% block content %} 
+{% extends 'users/layout.html' %}
+{% block content %}
 
-    
-    <div class="nav1">
-        <nav>
-            <a href="#" class="BUTTON_PWM">Technical Domains</a>
-            <a href="{% url 'domains2' %}" class="BUTTON_PWM">Non-technical Domains</a>
-        </nav>
-    </div>
-    <div class="container">
-        <div class="row1">
-        <div class="a">Web Development
-            <div class="icon">
-                <img src="https://img.icons8.com/ios-filled/50/000000/programming.png" alt="">
-            </div>
-            <div>
-                <a href="{% url 'apply' 'web' %}" class="BUTTON_NMQ">APPLY</a>
-            </div>
-        </div>
-        <div class="a">App Development
-            <div class="icon">
-                <img src="https://img.icons8.com/ios-filled/50/000000/ios-development.png" alt="">
-            </div>
-            <div>
-                <a href="{% url 'apply' 'app' %}" class="BUTTON_NMQ">APPLY</a>
-            </div>
-        </div>
-        <div class="a">Machine Learning
-            <div class="icon">
-                <img src="https://img.icons8.com/ios/50/000000/learning.png" alt="">
-            </div>
-            <div>
-                <a href="{% url 'apply' 'ml' %}" class="BUTTON_NMQ">APPLY</a>
-            </div>
-        </div>
 
-    </div>
-    <div class="row2">
-        <div class="a">Competitive Programming
-            <div class="icon">
-                <img src="https://img.icons8.com/ios-glyphs/30/000000/bug--v2.png" alt="">
-            </div>
-            <div>
-                <a href="{% url 'apply' 'cp' %}" class="BUTTON_NMQ error">APPLY</a>
-            </div>
-        </div>
-        <div class="a">Blockchain
-            <div class="icon">
-                <img src="https://img.icons8.com/dotty/50/000000/blockchain.png" alt="">
-            </div>
-            <div>
-                <a href="#" class="BUTTON_NMQ">APPLY</a>
-            </div>
-        </div>
-        <div class="a">Cyber-security
-            <div class="icon">
-                <img src="https://img.icons8.com/ios-filled/50/000000/cyber-security.png" alt="">
-            </div>
-            <div>
-                <a href="#" class="BUTTON_NMQ">APPLY</a>
-            </div>
-        </div>
-    </div>
-    <div class="row3">
-    <div class="a">DevOps and Cloud Computing
-        <div class="icon">
-            <img src="https://img.icons8.com/ios-filled/50/000000/cloud-computing.png" alt="">
-        </div>
-        <div>
-            <a href="#" class="BUTTON_NMQ error">APPLY</a>
-        </div>
-    </div>
-    </div>
-    </div>
-    <style>
-        *{
-    margin: 0;
-    box-sizing: border-box;
+<style>
+    /*----  Main Style  ----*/
+#cards_landscape_wrap-2{
+  text-align: center;
+  background: #F7F7F7;
 }
-.nav1{
-    text-align: center;
-    position: relative;
-    top: 50px;
+#cards_landscape_wrap-2 .container{
+  padding-top: 80px; 
+  padding-bottom: 100px;
 }
+#cards_landscape_wrap-2 a{
+  text-decoration: none;
+  outline: none;
+}
+#cards_landscape_wrap-2 .card-flyer {
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box{
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+  -webkit-transition:all .9s ease; 
+  -moz-transition:all .9s ease; 
+  -o-transition:all .9s ease;
+  -ms-transition:all .9s ease; 
+  width: 100%;
+  height: 200px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+  opacity: 0.7;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+  transform:scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box{
+  text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+  padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer{
+  background: #FFFFFF;
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_landscape_wrap-2 .card-flyer:hover{
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+  margin-top: 0px;
+  margin-bottom: 4px; 
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Roboto Black', sans-serif;
+  letter-spacing: 1px;
+  color: #00acc1;
+}
+.card-center {
+    display: block;
+    margin: auto;
+}
+.nav1 {
+        text-align: center;
+        position: relative;
+        top: 50px;
+    }
+
 .BUTTON_PWM {
-    -webkit-border-radius: 48px;
-    -moz-border-radius: 48px;
-    border-radius: 48px;
-    color: #E4ECF2;
-    font-family: Trebuchet MS;
-    font-size: 25px;
-    font-weight: 100;
-    padding: 20px;
-    margin: 40px;
-    width: 300px;
-    padding-right: 20px;
-    padding-left: 20px;
-    text-align: center;
-    background-color: #5C8CBB;
-    -webkit-box-shadow: 1px 1px 20px 0 #000000;
-    -moz-box-shadow: 1px 1px 20px 0 #000000;
-    box-shadow: 1px 1px 20px 0 #000000;
-    text-shadow: 1px 1px 20px #000000;
-    border: solid #000000 1px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
- }
- 
- .BUTTON_PWM:hover {
-    border: solid #000000 1px;
-    background: #23395C;
-    background-image: -webkit-linear-gradient(top, #23395C, #5079BB);
-    background-image: -moz-linear-gradient(top, #23395C, #5079BB);
-    background-image: -ms-linear-gradient(top, #23395C, #5079BB);
-    background-image: -o-linear-gradient(top, #23395C, #5079BB);
-    background-image: -webkit-gradient(to bottom, #23395C, #5079BB);
-    -webkit-border-radius: 88px;
-    -moz-border-radius: 88px;
-    border-radius: 88px;
-    text-decoration: none;
- }
- a{
-    text-decoration: 0;
-    padding: 20px;
-    color: #66bfbf;
+        -webkit-border-radius: 48px;
+        -moz-border-radius: 48px;
+        border-radius: 48px;
+        color: #E4ECF2;
+        font-family: Trebuchet MS;
+        font-size: 25px;
+        font-weight: 100;
+        padding: 20px;
+        margin: 30px;
+        width: 300px;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+        background-color: #5C8CBB;
+        -webkit-box-shadow: 1px 1px 20px 0 #000000;
+        -moz-box-shadow: 1px 1px 20px 0 #000000;
+        box-shadow: 1px 1px 20px 0 #000000;
+        text-shadow: 1px 1px 20px #000000;
+        border: solid #000000 1px;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
 }
 
-.navigation{
-    background-color: #313535;
-    overflow: hidden;
+.BUTTON_PWM:hover {
+        border: solid #000000 1px;
+        background: #23395C;
+        background-image: -webkit-linear-gradient(top, #23395C, #5079BB);
+        background-image: -moz-linear-gradient(top, #23395C, #5079BB);
+        background-image: -ms-linear-gradient(top, #23395C, #5079BB);
+        background-image: -o-linear-gradient(top, #23395C, #5079BB);
+        background-image: -webkit-gradient(to bottom, #23395C, #5079BB);
+        -webkit-border-radius: 88px;
+        -moz-border-radius: 88px;
+        border-radius: 88px;
+        text-decoration: none;
+}
+.button1 {
+    width: 75%;
+    margin-bottom: 1.2rem;
+    background-color: #11999E ;
+    border: none;
+    border-radius: 10px;
+}
+.button1:hover {
+    background-color: #145c5c;
+}
+
+</style>
+    <div class="main-nav">
+        <div class="nav1">
+            <nav>
+                <a href="#" class="BUTTON_PWM">Technical Domains</a>
+                <a href="{% url 'domains2' %}" class="BUTTON_PWM">Non-technical Domains</a>
+            </nav>
+        </div>
+       <!-- Topic Cards -->
+       <div id="cards_landscape_wrap-2">
+        <div class="container main-nav">
+            <div class="row">
+                {% for team in teams %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <!-- <a href=""> -->
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="{{team.img_url}}" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>{{team.team_name}}</h6>
+                                    <p>{{team.desc}}</p>
+                                </div>
+                                <a href="#" class="btn btn-primary button1" data-toggle="modal" data-target="#modalContactForm-{{team.code}}">APPLY</a>
+                            </div>
+                        </div>
+                    <!-- </a> -->
+                </div>
+                {% include 'users/apply_form.html' %}
+                
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
     
-}
-.nav{
-    float: right;
-    padding: 20px;
-    text-align: center;
-}
-#csi_logo{
-    width: 100px;
-    height: 60px;
-    padding: 10px;
-}
-.container{
-    flex-wrap: wrap;
-    margin: 40px;
-    align-items: center;
-    
-}
-.row1,.row2,.row3{
-    display: flex;
-    margin: 20px;
-    justify-content: center;
-}
-.a{
-    width: 300px;
-    height: 400px;
-    align-content: stretch;
-    overflow: hidden;
-    margin: 20px;
-    border: solid 5px #5079BB;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 10px;
-    border-radius: 30px;
-    padding-top: 20px;
-    font-weight: bolder;
 
-}
-.icon img{
-    width: 150px;
-    height: 150px;
-    margin-top: 50px;
-}
-.BUTTON_NMQ {
-    -webkit-border-radius: 48px;
-    -moz-border-radius: 48px;
-    border-radius: 48px;
-    color: #E4ECF2;
-    font-family: Trebuchet MS;
-    font-size: 25px;
-    font-weight: 100;
-    padding: 20px;
-     margin: 40px;
-    width: 200px;
-    padding-right: 20px;
-    padding-left: 20px;
-    text-align: center;
-    background-color: #5C8CBB;
-    -webkit-box-shadow: 1px 1px 20px 0 #000000;
-    -moz-box-shadow: 1px 1px 20px 0 #000000;
-    box-shadow: 1px 1px 20px 0 #000000;
-    text-shadow: 1px 1px 20px #000000;
-    border: solid #000000 1px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
- }
- 
- .BUTTON_NMQ:hover {
-    border: solid #000000 1px;
-    background: #23395C;
-    background-image: -webkit-linear-gradient(top, #23395C, #5079BB);
-    background-image: -moz-linear-gradient(top, #23395C, #5079BB);
-    background-image: -ms-linear-gradient(top, #23395C, #5079BB);
-    background-image: -o-linear-gradient(top, #23395C, #5079BB);
-    background-image: -webkit-gradient(to bottom, #23395C, #5079BB);
-    -webkit-border-radius: 88px;
-    -moz-border-radius: 88px;
-    border-radius: 88px;
-    text-decoration: none;
- }
- .error{
-     margin-top: 12px;
- }
 
-    </style>
-    {% endblock %}
+{% endblock %}

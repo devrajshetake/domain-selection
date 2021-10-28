@@ -6,9 +6,9 @@ urlpatterns = [
     path('login/', views.login, name = 'login'),
     path('logout/', views.logout, name = 'logout'),
     path('profile/', views.profile, name = 'profile'),
-    path('domains/', views.domains, name = 'domains'),
-    path('domains2/', views.domains2, name = 'domains2'),
+    path('domains/tech', views.domains, name = 'domains'),
+    path('domains/non-tech', views.domains2, name = 'domains2'),
+    path('domains/apply', views.apply, name = 'apply'),
     path('add-task/', views.add_task, name = 'addTask'),
-    path('domains/<str:code>', views.applyTeam, name = 'apply'),
 
 ]

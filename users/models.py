@@ -17,6 +17,8 @@ class Profile(models.Model):
 class Team(models.Model):
     team_name = models.CharField(max_length=60, null=True)
     code = models.CharField(max_length=16, null=True)
+    desc = models.CharField(max_length=500, null=True)
+    img_url = models.URLField(max_length=2000, null=True)
     def __str__(self):
         return f"{self.team_name}"
 
@@ -26,3 +28,20 @@ class Task(models.Model):
     task_desc = models.TextField()
     def __str__(self):
         return f"{self.task_title}"
+
+class Application(models.Model):
+    user =  models.ForeignKey(User, on_delete=CASCADE, related_name="applied_for")
+    team = models.ForeignKey('Team', related_name="appliedTo", on_delete=CASCADE, null=True)
+    whyTeam = models.TextField()
+    prevExp = models.TextField()
+
+    class Preference(models.IntegerChoices):
+        First = 1
+        Second = 2
+        Third = 3
+    preference = models.IntegerField(choices=Preference.choices)
+    expect = models.TextField(null=True)
+
+    def __str__(self):
+        return f"{self.user}: {self.team}"
+

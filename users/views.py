@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as login_User, logout as logout_User
 from django.urls import reverse
 from .models import *
+from django.contrib import messages
+from json import dumps
 
 
 # Create your views here.
@@ -30,8 +32,16 @@ def logout(request):
     
 
 def domains(request):
-    context = {'title': "Domains"}
-    return render(request, "users/domains1.html", context)
+    applications = Application.objects.filter(user = request.user)
+    radios = []
+    for application in applications:
+        radios.append(application.preference)
+    dataJSON = dumps({'lst' : radios})
+
+    print(radios)
+    teams = Team.objects.all()
+    context = {'title': "Domains", 'teams':teams, 'data':dataJSON, "helloji":"testing kar rahe"}
+    return render(request, "users/domains.html", context)
 
 def domains2(request):
     context = {'title': "Domains"}
@@ -59,8 +69,37 @@ def add_task(request):
         context = {'title': 'Add Task', 'success' : True}
     return render(request, "users/add_task.html", context)
 
-def applyTeam(request, code):
-    team = Team.objects.get(code = code)
-    tasks = team.team_tasks.all()
-    context = {'title':"Apply Now", 'team':team, 'tasks':tasks}
-    return render(request, 'users/apply.html', context)
+# def apply(request, code):
+#     team = Team.objects.get(code = code)
+#     tasks = team.team_tasks.all()
+#     context = {'title':"Apply Now", 'team':team, 'tasks':tasks}
+#     return render(request, 'users/apply.html', context)
+
+def apply(request):
+    if request.method == 'POST':
+        user = request.user
+        team = Team.objects.get(code = request.POST['team-code'])
+        print(team)
+        whyTeam = request.POST['whyTeam']
+        prevExp = request.POST['prevExp']
+        pref = int(request.POST['preference'])
+        expt = request.POST['expectation']
+        next = request.POST['next']
+
+        check = Application.objects.filter(user = user)
+        print(check)
+        for application in check:
+            if application.team == team:
+                messages.error(request, f'You have already applied for {team} Team.')
+                return redirect(next)
+        if len(check) >= 3:
+            messages.error(request, f'You cannot apply for more than 3 teams.')
+            return redirect(next)
+
+        inst = Application(team = team, user=user,  whyTeam=whyTeam, prevExp=prevExp, preference = pref, expect = expt)
+        inst.save()
+
+        messages.success(request, f'Succesfully applied to {team.team_name} Team')
+    return redirect(next)
+
+        
