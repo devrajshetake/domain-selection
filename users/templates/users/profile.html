@@ -34,7 +34,7 @@
     }
 
     .overlay {
-        background: url(https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/header.jpg) no-repeat top /contain;
+        background: url(https://media-exp1.licdn.com/dms/image/C4E0BAQHrTMepCzRupQ/company-logo_200_200/0/1627144153563?e=2159024400&v=beta&t=SopXBb8dLrNqKJvFugVA4J3H3gSHJNJllRMMO7B8Ex4) no-repeat top /contain;
         position: absolute;
         left: 0;
         top: 0;
@@ -82,7 +82,7 @@
     }
 
     .user-details p {
-        font-size: 11px;
+        font-size: 30px;
         float: left;
     }
 
@@ -98,7 +98,8 @@
     }
 
     .user-details h4 {
-        font-size: 18px;
+        font-size: 25px;
+        font-weight: 900;
     }
 
     .filter-btn {
@@ -214,26 +215,27 @@
     }
 
     .bottom .title h3 {
-        font-size: 22px;
-        margin-bottom: 5px;
+        font-size: 30px;
+        margin-bottom: 3px;
     }
 
     .title small {
-        font-size: 10px;
+        font-size: 20px;
         color: #888;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
 
     ul.tasks .task-title {
-        font-size: 13px;
+        font-size: 20px;
         display: inline-block;
     }
 
     ul.tasks .task-time {
         float: right;
-        font-size: 10px;
+        font-size: 30px;
         color: #888;
+        margin-top: 0px;
     }
 
     ul.tasks .task-cat {
@@ -243,7 +245,7 @@
     }
 
     ul.tasks li {
-        margin-bottom: 16px;
+        margin-bottom: 0px;
         position: relative;
         z-index: 8;
     }
@@ -258,16 +260,21 @@
         border-radius: 50%;
     }
 
-    ul.tasks li.red:after {
-        background: #FF3163;
+    /* ul.tasks li.red:after {
+        background: #ff5555;
     }
 
     ul.tasks li.green:after {
         background: #54D6C7;
+        font: 60px sans-serif;
+        
     }
 
     ul.tasks li.yellow:after {
         background: #EAB429;
+    } */
+    ::marker{
+        color: rgb(255, 255, 255);
     }
 
     ul.tasks::after {
@@ -293,18 +300,68 @@
     }
 
     .mainblock {
-        border: #222 solid 30px;
+        border: rgba(255, 255, 255, 0) solid 30px;
     }
+    .back{
+        background-color: #222;
+    }
+    .tasks{
+        padding-left: 0px;
+        font: 40px sans-serif;
+        margin-top: 0%;
+    }
+    .button{
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    button{
+        background-color: rgb(35, 190, 196);
+        font-family: sans-serif;
+        border: none;
+        height: 50px;
+        width: 100px;
+        font-size: 15px;
+        border-radius: 7px;
+        
+    }
+    .bottom{
+        padding-bottom: 15px;
+    }
+    .mainblock{
+        max-height: 900px;
+        max-width: 900px;
+        margin: auto;
+
+    }
+    .back{
+        background-image: linear-gradient(to right,rgb(60, 130, 151),rgb(18, 30, 90));
+    }
+    h3{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+        font-size: 60px;
+    }
+    /* .task-title{
+        font: 2em sans-serif;
+    } */
+    .space{
+        height: 0px;
+    }
+    .user-details{
+        font-size: 10rem;
+    }
+   
 </style>
+<div class="back">
 <div class="mainblock">
     <div class="muck-up">
         <div class="overlay"></div>
         <div class="top">
+            <img src="">
             <div class="user-profile">
                 <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png">
                 <div class="user-details">
                     <!-- write name -->
-                    <h4>Arjun Amgain</h4>
+                    <h4>Devraj Shetke</h4>
                     <!-- write roll number and div -->
                     <!-- <p>Web/Front-end Designer</p> -->
                 </div>
@@ -323,20 +380,27 @@
             <div class="title">
                 <h3>My Teams</h3>
             </div>
-            <ul class="tasks">
-                <li class="one red">
-                    <span class="task-title">TEAM 1</span>
-                    <span class="task-cat">Technical Team</span>
+            <ul class="tasks" ty>
+                <li class="one green">
+                    <span class="task-title">Technical Teams</span>
+                    <span class="task-cat">xyz</span>
+
 
                 </li>
+                <li class="space"></li>
                 <li class="one red">
-                    <span class="task-title">TEAM 2</span>
-                    <span class="task-cat">NON-TECHNICAL</span>
+                    <span class="task-title">Non- Technical Teams</span>
+                    <span class="task-cat">xyz</span>
 
                 </li>
             </ul>
+            <div class="button">
+                <button>LOGOUT</button>
+            </div>
+            
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
